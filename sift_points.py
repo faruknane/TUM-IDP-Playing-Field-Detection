@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 # Read the image named "deneme.png"
-img1 = cv2.imread("debug/edges.png")
+img1 = cv2.imread("debug/edges2.png")
 img2 = cv2.imread("deneme.png")
 
 img = img1 * 0.5 + img2 * 0.5

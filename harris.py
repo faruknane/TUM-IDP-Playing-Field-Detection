@@ -19,8 +19,17 @@ cv2.imwrite("debug/gray.png", gray)
 edges = cv2.Canny(gray, 255, 35)
 cv2.imwrite("debug/edges.png", edges)
 
+edges2 = GaussianBlur(edges, (9, 9), 50)
+edges2 = GaussianBlur(edges2, (9, 9), 80)
+edges2 = GaussianBlur(edges2, (9, 9), 80)
+edges2 = GaussianBlur(edges2, (9, 9), 80)
+edges2 = GaussianBlur(edges2, (9, 9), 220)
+edges2 = GaussianBlur(edges2, (9, 9), 220)
+
+cv2.imwrite("debug/edges2.png", edges2)
+
 # Apply Harris corner detection with a block size of 2 and a Sobel aperture of 3
-dst = cv2.cornerHarris(edges, 3, 3, 0.05)
+dst = cv2.cornerHarris(edges2, 3, 3, 0.05)
 
 # Dilate the result to mark the corners
 dst = cv2.dilate(dst, None)

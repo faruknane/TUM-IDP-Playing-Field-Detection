@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-img = cv2.imread("debug/edges.png", cv2.IMREAD_UNCHANGED)
+img = cv2.imread("debug/edges2.png", cv2.IMREAD_UNCHANGED)
 
 #Find my contours
 contours =cv2.findContours(img,cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_NONE)[0]

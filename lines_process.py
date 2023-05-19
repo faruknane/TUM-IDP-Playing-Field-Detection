@@ -466,6 +466,194 @@ def Process(lines, dist_threshold, angle_threshold, angle_threshold2 = 10):
 
 
 # 	return lines
+
+def CalculatePairDistAngle(mylinepoint1, mylinepoint2, secondlinepoint1, secondlinepoint2):
+	mylineangle = angle(mylinepoint1[0], mylinepoint1[1], mylinepoint2[0], mylinepoint2[1])
+	secondlineangle = angle(secondlinepoint1[0], secondlinepoint1[1], secondlinepoint2[0], secondlinepoint2[1])
+
+
+	angle_diff = abs(mylineangle - secondlineangle)
+	angle_diff = min(angle_diff, math.pi - angle_diff)
+
+	# calculate the closest distance between points and lines using DistancePointLine
+	dist1 = DistancePointLine(mylinepoint1[0], mylinepoint1[1], secondlinepoint1[0], secondlinepoint1[1], secondlinepoint2[0], secondlinepoint2[1])
+	dist2 = DistancePointLine(mylinepoint2[0], mylinepoint2[1], secondlinepoint1[0], secondlinepoint1[1], secondlinepoint2[0], secondlinepoint2[1])
+	dist3 = DistancePointLine(secondlinepoint1[0], secondlinepoint1[1], mylinepoint1[0], mylinepoint1[1], mylinepoint2[0], mylinepoint2[1])
+	dist4 = DistancePointLine(secondlinepoint2[0], secondlinepoint2[1], mylinepoint1[0], mylinepoint1[1], mylinepoint2[0], mylinepoint2[1])
+	dist = min(dist1, dist2, dist3, dist4)
+
+	return dist, angle_diff
+
+# 5 degree to radian is 0.0872665
+def PairLines(lines, delta_e = 0.0872665, max_dist = 50):
+
+	# pair the lines
+	pairs = []
+	for i in range(len(lines)):
+		# calculate angle of line i
+		mylinepoint1 = (float(lines[i][0][0]), float(lines[i][0][1]))
+		mylinepoint2 = (float(lines[i][0][2]), float(lines[i][0][3]))
+		mylineangle = angle(mylinepoint1[0], mylinepoint1[1], mylinepoint2[0], mylinepoint2[1])
+		
+		for j in range(i+1, len(lines)):
+
+			# calculate angle of line j
+			secondlinepoint1 = (float(lines[j][0][0]), float(lines[j][0][1]))
+			secondlinepoint2 = (float(lines[j][0][2]), float(lines[j][0][3]))
+			secondlineangle = angle(secondlinepoint1[0], secondlinepoint1[1], secondlinepoint2[0], secondlinepoint2[1])
+			
+			dist, angle_diff = CalculatePairDistAngle(mylinepoint1, mylinepoint2, secondlinepoint1, secondlinepoint2)
+
+			# check if the lines are perpendicular
+			if dist < max_dist and math.pi/2 - delta_e  < angle_diff and angle_diff < math.pi/2 + delta_e:
+				
+				# find the more vertical line and create a pair such that the more vertical line is the first element of the pair
+				if abs(math.pi/2 - abs(mylineangle)) < abs(math.pi/2 - abs(secondlineangle)):
+					pair = [lines[i], lines[j]]
+				else:
+					pair = [lines[j], lines[i]]
+
+				pairs.append(pair)
+
+	return pairs
+
+def PairPairs(pairs, delta_e = 0.0872665, max_dist = 50, min_dist_same_lines = 250):
+
+	paired_pairs = []
+
+	for i in range(len(pairs)):
+		for j in range(i+1, len(pairs)):
+			
+			vertical_line_i = pairs[i][0][0]
+			horizontal_line_i = pairs[i][1][0]
+			vertical_line_j = pairs[j][0][0]
+			horizontal_line_j = pairs[j][1][0]
+
+			# calculate dist, angle_diff vertical_line_i and horizontal_line_j are perpendicular
+			dist, angle_diff = CalculatePairDistAngle(vertical_line_i[0:2], vertical_line_i[2:4], horizontal_line_j[0:2], horizontal_line_j[2:4])
+
+			# calculate dist, angle_diff vertical_line_j and horizontal_line_i are perpendicular
+			dist2, angle_diff2 = CalculatePairDistAngle(vertical_line_j[0:2], vertical_line_j[2:4], horizontal_line_i[0:2], horizontal_line_i[2:4])
+
+			# calculate dist, angle_diff vertical_line_i and vertical_line_j
+			dist3, angle_diff3 = CalculatePairDistAngle(vertical_line_i[0:2], vertical_line_i[2:4], vertical_line_j[0:2], vertical_line_j[2:4])
+
+			# calculate dist, angle_diff horizontal_line_i and horizontal_line_j
+			dist4, angle_diff4 = CalculatePairDistAngle(horizontal_line_i[0:2], horizontal_line_i[2:4], horizontal_line_j[0:2], horizontal_line_j[2:4])
+
+			if dist3 > min_dist_same_lines and dist4 > min_dist_same_lines:
+				if dist < max_dist and math.pi/2 - delta_e  < angle_diff and angle_diff < math.pi/2 + delta_e:
+					if dist2 < max_dist and math.pi/2 - delta_e  < angle_diff2 and angle_diff2 < math.pi/2 + delta_e:
+						paired_pairs.append([pairs[i], pairs[j]])
+
+	return paired_pairs
+
+def LineFormula(x1,y1,x2,y2):
+	
+	# x1 = a * y1 + b
+	# x2 = a * y2 + b
+
+	# x2 - x1 = a(y2 - y1)
+
+	# (x2 - x1) / (y2 - y1) = a
+
+	# x1 - a * y1 = b
+
+	# return a, b
+
+	# write a case where y2 = y1
+
+	if y2 == y1:
+		return 0, x1
+	
+	return (x2 - x1) / (y2 - y1), x1 - (x2 - x1) / (y2 - y1) * y1
+
+def LineIntersection(line1point1, line1point2, line2point1, line2point2):
+	# calculate the formula of the lines and intersect the two formulas, find the x value first then y value
+
+	# line 1
+	a1, b1 = LineFormula(line1point1[0], line1point1[1], line1point2[0], line1point2[1])
+
+	# line 2
+	a2, b2 = LineFormula(line2point1[0], line2point1[1], line2point2[0], line2point2[1])
+
+	# x = a1 * y + b1
+	# x = a2 * y + b2
+
+	# a1 * y + b1 = a2 * y + b2
+	# a1 * y - a2 * y = b2 - b1
+	# y * (a1 - a2) = b2 - b1
+	# y = (b2 - b1) / (a1 - a2)
+	# x = a1 * y + b1
+	# x = a1 * ((b2 - b1) / (a1 - a2)) + b1
+	# find y and x
+
+	x = a1 * ((b2 - b1) / (a1 - a2)) + b1
+	y = (b2 - b1) / (a1 - a2)
+
+	return x, y
+
+def PairedPairArea(paired_pair):
+
+	pairs_i = paired_pair[0]
+	pairs_j = paired_pair[1]
+
+	vertical_line_i = pairs_i[0][0]
+	horizontal_line_i = pairs_i[1][0]
+	vertical_line_j = pairs_j[0][0]
+	horizontal_line_j = pairs_j[1][0]
+
+	intersection_point1 = LineIntersection(vertical_line_i[0:2], vertical_line_i[2:4], horizontal_line_j[0:2], horizontal_line_j[2:4])
+	intersection_point2 = LineIntersection(vertical_line_j[0:2], vertical_line_j[2:4], horizontal_line_i[0:2], horizontal_line_i[2:4])
+
+	x_diff = abs(intersection_point1[0] - intersection_point2[0])
+	y_diff = abs(intersection_point1[1] - intersection_point2[1])
+
+	return x_diff * y_diff
+
+def PairedPairToRectangle(paired_pair):
+
+	pairs_i = paired_pair[0]
+	pairs_j = paired_pair[1]
+
+	vertical_line_i = pairs_i[0][0]
+	horizontal_line_i = pairs_i[1][0]
+	vertical_line_j = pairs_j[0][0]
+	horizontal_line_j = pairs_j[1][0]
+
+	# find if horizontal line i is above or below horizontal line j
+	if horizontal_line_i[1] < horizontal_line_j[1]:
+		horizontal_line_above = horizontal_line_i
+		horizontal_line_below = horizontal_line_j
+	else:
+		horizontal_line_above = horizontal_line_j
+		horizontal_line_below = horizontal_line_i
+	
+	# find if vertical line i is left or right of vertical line j
+	if vertical_line_i[0] < vertical_line_j[0]:
+		vertical_line_left = vertical_line_i
+		vertical_line_right = vertical_line_j
+	else:
+		vertical_line_left = vertical_line_j
+		vertical_line_right = vertical_line_i
+
+	# now return 4 points of the rectangle from the 4 intersection points in the order of top left, top right, bottom right, bottom left
+
+	# top left
+	intersection_point1 = LineIntersection(vertical_line_left[0:2], vertical_line_left[2:4], horizontal_line_above[0:2], horizontal_line_above[2:4])
+
+	# top right
+	intersection_point2 = LineIntersection(vertical_line_right[0:2], vertical_line_right[2:4], horizontal_line_above[0:2], horizontal_line_above[2:4])
+
+	# bottom right
+	intersection_point3 = LineIntersection(vertical_line_right[0:2], vertical_line_right[2:4], horizontal_line_below[0:2], horizontal_line_below[2:4])
+
+	# bottom left
+	intersection_point4 = LineIntersection(vertical_line_left[0:2], vertical_line_left[2:4], horizontal_line_below[0:2], horizontal_line_below[2:4])
+
+	return [intersection_point1, intersection_point2, intersection_point3, intersection_point4]
+
+
 if __name__ == "__main__":
 
 	p1 = [[3119, 1706, 3106,  841]]

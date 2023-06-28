@@ -66,37 +66,41 @@ def Preprocess(img):
 
     # gray = cv2.bilateralFilter(gray, 3, 75, 75)
 
+    # ratio = 1 # works for 0.8
+
+    # # increase width and height of the image by 1.2
+    # gray = cv2.resize(gray, (0, 0), fx=ratio, fy=ratio)
+
     # Apply Canny edge detection
-    edges = cv2.Canny(gray, 255, 35)
+    edges = cv2.Canny(gray, 200, 75)
+
+    # decrease width and height of the image by 1.2
+    # edges = cv2.resize(edges, (0, 0), fx=1/ratio, fy=1/ratio)
+
     cv2.imwrite("debug/edges.png", edges)
 
     edges2 = edges
 
     edges2 = GaussianBlur(edges2, (9, 9), 50)
-    edges2 = GaussianBlur(edges2, (9, 9), 80)
     edges2 = cv2.dilate(edges2, np.ones((3, 3), np.uint8), iterations=1)
-    edges2 = GaussianBlur(edges2, (5, 5), 140)
-    edges2 = GaussianBlur(edges2, (5, 5), 180)
-    edges2 = GaussianBlur(edges2, (5, 5), 220)
-    edges2 = GaussianBlur(edges2, (5, 5), 220)
+    edges2 = GaussianBlur(edges2, (9, 9), 180)
+    cv2.imwrite("debug/edges1.5.png", edges2)
+    edges2 = cv2.erode(edges2, np.ones((3, 3), np.uint8), iterations=1)
+    edges2 = GaussianBlur(edges2, (5, 5), 150)
     cv2.imwrite("debug/edges2.png", edges2)
-    
+
     cikar = ApplyVertical(ApplyHorizontal(edges2, 25), 25)
-
     edges3 = np.where(edges2 > cikar, 255, 0).astype(np.uint8)
-
     vertical_lines = ApplyVertical(edges3, 21, other_size=1)
     horizontal_lines = ApplyHorizontal(edges3, 21, other_size=1)
-
     edges3 = np.where(horizontal_lines >= 255 - vertical_lines, 255, 0).astype(np.uint8)
-    
     cv2.imwrite("debug/edges3.png", edges3)
-
+    
     return edges3
 
 def ExtractDefaultHoughLines(edges2):
     # Apply Hough line detection
-    lines = cv2.HoughLinesP(edges2, 1, math.pi/180, 200, minLineLength=80, maxLineGap=30)
+    lines = cv2.HoughLinesP(edges2, 1, math.pi/180, 200, minLineLength=200, maxLineGap=50)
     # lines2 = cv2.HoughLinesP(edges2, 1, math.pi/180, 200, minLineLength=80, maxLineGap=30)
     # lines = line_detection.GetLines(edges2)
     
@@ -129,6 +133,8 @@ def ExtractDefaultHoughLines(edges2):
 
     lines = lines_process.Process(lines, 30, 0.020)
     lines = lines_process.Process(lines, 60, angle_threshold=0.020, angle_threshold2=0.0135)
+    lines = lines_process.Process(lines, 90, angle_threshold=0.010, angle_threshold2=0.0065)
+    lines = lines_process.Process(lines, 120, angle_threshold=0.005, angle_threshold2=0.003)
     print(len(lines))
     print("-------------")
 
@@ -277,9 +283,12 @@ if __name__ == "__main__":
 
     for counter_i in range(0, 100):
             
-        # frame = video_process.TakeFrameFromVideo("soccer_short.MP4", counter_i)
-        # frame = video_process.TakeFrameFromVideo("videos/3.mp4", counter_i)
-        frame = video_process.TakeFrameFromVideo("videos/DJI_0176.MP4", counter_i)
+        # frame = video_process.TakeFrameFromVideo("videos/3.MP4", counter_i)
+        frame = video_process.TakeFrameFromVideo("videos/6.MP4", counter_i)
+        # frame = video_process.TakeFrameFromVideo("videos/DJI_0170.MP4", counter_i)
+        # frame = video_process.TakeFrameFromVideo("videos/DJI_0176.MP4", counter_i)
+        # frame = video_process.TakeFrameFromVideo("videos/soccer_short.MP4", counter_i)
+        # frame = video_process.TakeFrameFromVideo("videos/Tennis_0069.mov", counter_i)
         
         StartMeasuring()
         frame_edges = Preprocess(frame)

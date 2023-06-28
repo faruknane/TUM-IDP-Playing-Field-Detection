@@ -87,7 +87,7 @@ def GetLines(edges2):
 
 
 if __name__ == "__main__":
-    img = cv2.imread("videos/hard.png", cv2.IMREAD_COLOR)
+    img = video_process.TakeFrameFromVideo("videos/DJI_0176.MP4", 0)
     edges2 = Preprocess(img)
     lines = GetLines(edges2)
 

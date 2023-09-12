@@ -1,0 +1,12 @@
+# augmentations:
+    - furkan -> flip v h
+    - furkan -> blur a bit
+    - furkan -> shadow
+    - faruk -> rotate a bit
+    - sharpness
+    - RandomPosterize
+
+
+- freze the backbone, train a few epochs
+- train with augmentations
+    

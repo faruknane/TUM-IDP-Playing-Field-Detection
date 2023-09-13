@@ -1,0 +1,165 @@
+EXP 1:
+
+# added augmentations:
+    - furkan -> flip v h +
+    - furkan -> blur a bit +
+    - furkan -> shadow + 
+    - faruk -> rotatation
+
+Train Epoch: 0 [2580/2580] Loss: 0.3082389961 Grid Acc: 0.6710077519 Offset Error: 0.1082042070
+Val Epoch: 0 [400/400] Loss: 0.5753096408 Grid Acc: 0.4730000000 Offset Error: 0.1252152401
+Train Epoch: 1 [2580/2580] Loss: 0.0447098726 Grid Acc: 0.8618604651 Offset Error: 0.0469163494
+Val Epoch: 1 [400/400] Loss: 0.3241006775 Grid Acc: 0.6250000000 Offset Error: 0.0807990361
+Train Epoch: 2 [2580/2580] Loss: 0.0268310650 Grid Acc: 0.8977519380 Offset Error: 0.0368939219
+Val Epoch: 2 [400/400] Loss: 0.2763648396 Grid Acc: 0.6420000000 Offset Error: 0.0662695921
+Train Epoch: 3 [2580/2580] Loss: 0.0221087570 Grid Acc: 0.8917829457 Offset Error: 0.0341234564
+Val Epoch: 3 [400/400] Loss: 0.2444496235 Grid Acc: 0.6255000000 Offset Error: 0.0586352638
+Train Epoch: 4 [2580/2580] Loss: 0.0182915389 Grid Acc: 0.9167441860 Offset Error: 0.0309924895
+Val Epoch: 4 [400/400] Loss: 0.1265259435 Grid Acc: 0.6025000000 Offset Error: 0.0435656465
+Train Epoch: 5 [2580/2580] Loss: 0.0166098652 Grid Acc: 0.9124031008 Offset Error: 0.0296784657
+Val Epoch: 5 [400/400] Loss: 0.2030020641 Grid Acc: 0.7225000000 Offset Error: 0.0513268533
+Train Epoch: 6 [2580/2580] Loss: 0.0146130599 Grid Acc: 0.9234883721 Offset Error: 0.0276483870
+Val Epoch: 6 [400/400] Loss: 0.1481667304 Grid Acc: 0.7510000000 Offset Error: 0.0423824572
+Train Epoch: 7 [2580/2580] Loss: 0.0136818268 Grid Acc: 0.9250387597 Offset Error: 0.0266664800
+Val Epoch: 7 [400/400] Loss: 0.2269565257 Grid Acc: 0.6810000000 Offset Error: 0.0571144076
+Train Epoch: 8 [2580/2580] Loss: 0.0128579223 Grid Acc: 0.9317054264 Offset Error: 0.0261796306
+Val Epoch: 8 [400/400] Loss: 0.1641619538 Grid Acc: 0.8255000000 Offset Error: 0.0400422428
+Train Epoch: 9 [2580/2580] Loss: 0.0126245813 Grid Acc: 0.9258914729 Offset Error: 0.0256344142
+Val Epoch: 9 [400/400] Loss: 0.2713642758 Grid Acc: 0.8060000000 Offset Error: 0.0529424584
+Train Epoch: 10 [2580/2580] Loss: 0.0117390653 Grid Acc: 0.9239534884 Offset Error: 0.0245094703
+Val Epoch: 10 [400/400] Loss: 0.1740590867 Grid Acc: 0.7650000000 Offset Error: 0.0501056258
+Train Epoch: 11 [2580/2580] Loss: 0.0115040870 Grid Acc: 0.9271317829 Offset Error: 0.0240508876
+Val Epoch: 11 [400/400] Loss: 0.1799814234 Grid Acc: 0.6965000000 Offset Error: 0.0464021713
+Train Epoch: 12 [2580/2580] Loss: 0.0112345879 Grid Acc: 0.9313178295 Offset Error: 0.0240453222
+Val Epoch: 12 [400/400] Loss: 0.2121168430 Grid Acc: 0.7485000000 Offset Error: 0.0514236223
+Train Epoch: 13 [2580/2580] Loss: 0.0112595315 Grid Acc: 0.9330232558 Offset Error: 0.0248456524
+Val Epoch: 13 [400/400] Loss: 0.1341523282 Grid Acc: 0.6930000000 Offset Error: 0.0461342629
+Train Epoch: 14 [2580/2580] Loss: 0.0109760288 Grid Acc: 0.9262015504 Offset Error: 0.0239985479
+Val Epoch: 14 [400/400] Loss: 0.0712944501 Grid Acc: 0.7605000000 Offset Error: 0.0352911231
+Train Epoch: 15 [2580/2580] Loss: 0.0097329989 Grid Acc: 0.9389147287 Offset Error: 0.0230120027
+Val Epoch: 15 [400/400] Loss: 0.3710940730 Grid Acc: 0.7080000000 Offset Error: 0.0707357612
+Train Epoch: 16 [2580/2580] Loss: 0.0099332241 Grid Acc: 0.9412403101 Offset Error: 0.0231043336
+Val Epoch: 16 [400/400] Loss: 0.1251088621 Grid Acc: 0.8220000000 Offset Error: 0.0424824268
+Train Epoch: 17 [2580/2580] Loss: 0.0106747500 Grid Acc: 0.9377519380 Offset Error: 0.0238585033
+Val Epoch: 17 [400/400] Loss: 0.1619607485 Grid Acc: 0.8130000000 Offset Error: 0.0483663175
+Train Epoch: 18 [2580/2580] Loss: 0.0104873250 Grid Acc: 0.9317829457 Offset Error: 0.0231775654
+Val Epoch: 18 [400/400] Loss: 0.4325296565 Grid Acc: 0.7470000000 Offset Error: 0.0758357065
+Train Epoch: 19 [2580/2580] Loss: 0.0100318604 Grid Acc: 0.9351162791 Offset Error: 0.0229492902
+Val Epoch: 19 [400/400] Loss: 0.2138667403 Grid Acc: 0.6425000000 Offset Error: 0.0565621237
+Train Epoch: 20 [2580/2580] Loss: 0.0094837922 Grid Acc: 0.9486046512 Offset Error: 0.0223510435
+Val Epoch: 20 [400/400] Loss: 0.0689533614 Grid Acc: 0.7435000000 Offset Error: 0.0385023568
+Train Epoch: 21 [2580/2580] Loss: 0.0085284281 Grid Acc: 0.9549612403 Offset Error: 0.0216516927
+Val Epoch: 21 [400/400] Loss: 0.3817499558 Grid Acc: 0.8130000000 Offset Error: 0.0747369218
+Train Epoch: 22 [2580/2580] Loss: 0.0094965286 Grid Acc: 0.9368992248 Offset Error: 0.0217521984
+Val Epoch: 22 [400/400] Loss: 0.2694023594 Grid Acc: 0.7885000000 Offset Error: 0.0677153834
+Train Epoch: 23 [2580/2580] Loss: 0.0094927521 Grid Acc: 0.9315503876 Offset Error: 0.0222070880
+Val Epoch: 23 [400/400] Loss: 0.0918439924 Grid Acc: 0.7545000000 Offset Error: 0.0307283821
+Train Epoch: 24 [2580/2580] Loss: 0.0084922705 Grid Acc: 0.9461240310 Offset Error: 0.0211598632
+Val Epoch: 24 [400/400] Loss: 0.0270511781 Grid Acc: 0.8755000000 Offset Error: 0.0360016034
+Train Epoch: 25 [2580/2580] Loss: 0.0089374664 Grid Acc: 0.9485271318 Offset Error: 0.0218626202
+Val Epoch: 25 [400/400] Loss: 0.0544101606 Grid Acc: 0.7895000000 Offset Error: 0.0410440638
+Train Epoch: 26 [2580/2580] Loss: 0.0087673946 Grid Acc: 0.9432558140 Offset Error: 0.0216862598
+Val Epoch: 26 [400/400] Loss: 0.1263702456 Grid Acc: 0.8695000000 Offset Error: 0.0564877649
+Train Epoch: 27 [2580/2580] Loss: 0.0084981537 Grid Acc: 0.9382170543 Offset Error: 0.0215292695
+Val Epoch: 27 [400/400] Loss: 0.1112874308 Grid Acc: 0.8220000000 Offset Error: 0.0539431276
+Train Epoch: 28 [2580/2580] Loss: 0.0079986769 Grid Acc: 0.9501550388 Offset Error: 0.0207514933
+Val Epoch: 28 [400/400] Loss: 0.0492129172 Grid Acc: 0.8590000000 Offset Error: 0.0433460415
+Train Epoch: 29 [2580/2580] Loss: 0.0096485932 Grid Acc: 0.9335658915 Offset Error: 0.0223074077
+Val Epoch: 29 [400/400] Loss: 0.0413674051 Grid Acc: 0.8040000000 Offset Error: 0.0378437309
+Train Epoch: 30 [2580/2580] Loss: 0.0083553005 Grid Acc: 0.9509302326 Offset Error: 0.0211192378
+Val Epoch: 30 [400/400] Loss: 0.2040157865 Grid Acc: 0.7405000000 Offset Error: 0.0520007808
+Train Epoch: 31 [2580/2580] Loss: 0.0082056490 Grid Acc: 0.9525581395 Offset Error: 0.0210848826
+Val Epoch: 31 [400/400] Loss: 0.0861899117 Grid Acc: 0.7820000000 Offset Error: 0.0312995689
+
+
+
+
+
+
+EXP 2:
+
+loss = grid_loss/2 + offset_loss*5 ------> loss = grid_loss + offset_loss
+grid_loss = loss_bce(my_pred, ground_truth) + 0.5*loss_bce(my_pred[0,grid_num_y, grid_num_x], ground_truth[0,grid_num_y, grid_num_x])
+---------->
+grid_loss = loss_bce(my_pred, ground_truth) + 0.2*loss_bce(my_pred[0,grid_num_y, grid_num_x], ground_truth[0,grid_num_y, grid_num_x])
+                    
+                    
+Val Epoch: 0 [400/400] Loss: 0.1690135846 Grid Acc: 0.6385000000 Offset Error: 0.1123767318
+Train Epoch: 1 [2580/2580] Loss: 0.0221182255 Grid Acc: 0.8874418605 Offset Error: 0.0481730391
+Val Epoch: 1 [400/400] Loss: 0.1296509978 Grid Acc: 0.7405000000 Offset Error: 0.0857953345
+Train Epoch: 2 [2580/2580] Loss: 0.0142531215 Grid Acc: 0.8999224806 Offset Error: 0.0410265777
+Val Epoch: 2 [400/400] Loss: 0.1212942804 Grid Acc: 0.7890000000 Offset Error: 0.0734622929
+Train Epoch: 3 [2580/2580] Loss: 0.0103525537 Grid Acc: 0.9144961240 Offset Error: 0.0361095609
+Val Epoch: 3 [400/400] Loss: 0.1701500193 Grid Acc: 0.5950000000 Offset Error: 0.0745792198
+Train Epoch: 4 [2580/2580] Loss: 0.0091066304 Grid Acc: 0.9189922481 Offset Error: 0.0347029601
+Val Epoch: 4 [400/400] Loss: 0.1378223092 Grid Acc: 0.8015000000 Offset Error: 0.0693187409
+Train Epoch: 5 [2580/2580] Loss: 0.0083153772 Grid Acc: 0.9173643411 Offset Error: 0.0335719526
+Val Epoch: 5 [400/400] Loss: 0.1283557201 Grid Acc: 0.7060000000 Offset Error: 0.0691553252
+Train Epoch: 6 [2580/2580] Loss: 0.0078445549 Grid Acc: 0.9220930233 Offset Error: 0.0332253285
+Val Epoch: 6 [400/400] Loss: 0.0234599303 Grid Acc: 0.8705000000 Offset Error: 0.0521572778
+Train Epoch: 7 [2580/2580] Loss: 0.0074254915 Grid Acc: 0.9293023256 Offset Error: 0.0326786904
+Val Epoch: 7 [400/400] Loss: 0.0666368373 Grid Acc: 0.7735000000 Offset Error: 0.0719289178
+Train Epoch: 8 [2580/2580] Loss: 0.0064701705 Grid Acc: 0.9344186047 Offset Error: 0.0308442241
+Val Epoch: 8 [400/400] Loss: 0.0567959924 Grid Acc: 0.7335000000 Offset Error: 0.0572472342
+Train Epoch: 9 [2580/2580] Loss: 0.0068444128 Grid Acc: 0.9251937984 Offset Error: 0.0320107428
+Val Epoch: 9 [400/400] Loss: 0.0485923705 Grid Acc: 0.8355000000 Offset Error: 0.0701729093
+Train Epoch: 10 [2580/2580] Loss: 0.0068896316 Grid Acc: 0.9220930233 Offset Error: 0.0314077898
+Val Epoch: 10 [400/400] Loss: 0.0626209133 Grid Acc: 0.8810000000 Offset Error: 0.0650199082
+Train Epoch: 11 [2580/2580] Loss: 0.0061745582 Grid Acc: 0.9344186047 Offset Error: 0.0300334020
+Val Epoch: 11 [400/400] Loss: 0.1604167932 Grid Acc: 0.8595000000 Offset Error: 0.0689878299
+Train Epoch: 12 [2580/2580] Loss: 0.0061122017 Grid Acc: 0.9203875969 Offset Error: 0.0299789876
+Val Epoch: 12 [400/400] Loss: 0.0202232976 Grid Acc: 0.8435000000 Offset Error: 0.0515094728
+Train Epoch: 13 [2580/2580] Loss: 0.0060023467 Grid Acc: 0.9268217054 Offset Error: 0.0293114727
+Val Epoch: 13 [400/400] Loss: 0.0477800100 Grid Acc: 0.8675000000 Offset Error: 0.0587667335
+Train Epoch: 14 [2580/2580] Loss: 0.0059401584 Grid Acc: 0.9346511628 Offset Error: 0.0288520596
+Val Epoch: 14 [400/400] Loss: 0.0392704638 Grid Acc: 0.7905000000 Offset Error: 0.0432697875
+Train Epoch: 15 [2580/2580] Loss: 0.0058725675 Grid Acc: 0.9350387597 Offset Error: 0.0287882868
+Val Epoch: 15 [400/400] Loss: 0.0421454307 Grid Acc: 0.8065000000 Offset Error: 0.0355167145
+Train Epoch: 16 [2580/2580] Loss: 0.0050912472 Grid Acc: 0.9402325581 Offset Error: 0.0271835479
+Val Epoch: 16 [400/400] Loss: 0.0375626771 Grid Acc: 0.8175000000 Offset Error: 0.0441735089
+Train Epoch: 17 [2580/2580] Loss: 0.0053882279 Grid Acc: 0.9308527132 Offset Error: 0.0275689672
+Val Epoch: 17 [400/400] Loss: 0.0145463794 Grid Acc: 0.8335000000 Offset Error: 0.0422169791
+Train Epoch: 18 [2580/2580] Loss: 0.0055105492 Grid Acc: 0.9382170543 Offset Error: 0.0284223645
+Val Epoch: 18 [400/400] Loss: 0.0349953548 Grid Acc: 0.8460000000 Offset Error: 0.0360624821
+Train Epoch: 19 [2580/2580] Loss: 0.0051241607 Grid Acc: 0.9411627907 Offset Error: 0.0270239029
+Val Epoch: 19 [400/400] Loss: 0.0411315433 Grid Acc: 0.7820000000 Offset Error: 0.0446804601
+Train Epoch: 20 [2580/2580] Loss: 0.0046725809 Grid Acc: 0.9452713178 Offset Error: 0.0263594940
+Val Epoch: 20 [400/400] Loss: 0.1043860508 Grid Acc: 0.7375000000 Offset Error: 0.0580787470
+Train Epoch: 21 [2580/2580] Loss: 0.0054589658 Grid Acc: 0.9417054264 Offset Error: 0.0284810867
+Val Epoch: 21 [400/400] Loss: 0.1517916554 Grid Acc: 0.8040000000 Offset Error: 0.0713948903
+Train Epoch: 22 [2580/2580] Loss: 0.0056174699 Grid Acc: 0.9380620155 Offset Error: 0.0286193158
+Val Epoch: 22 [400/400] Loss: 0.1246218599 Grid Acc: 0.7330000000 Offset Error: 0.0687256285
+Train Epoch: 23 [2580/2580] Loss: 0.0056914398 Grid Acc: 0.9330232558 Offset Error: 0.0278782919
+Val Epoch: 23 [400/400] Loss: 0.0652280804 Grid Acc: 0.8075000000 Offset Error: 0.0576679426
+Train Epoch: 24 [2580/2580] Loss: 0.0045672820 Grid Acc: 0.9474418605 Offset Error: 0.0257070072
+Val Epoch: 24 [400/400] Loss: 0.2055080626 Grid Acc: 0.8485000000 Offset Error: 0.0792594416
+Train Epoch: 25 [2580/2580] Loss: 0.0044937169 Grid Acc: 0.9482945736 Offset Error: 0.0256989360
+Val Epoch: 25 [400/400] Loss: 0.2024047637 Grid Acc: 0.7885000000 Offset Error: 0.0765725864
+Train Epoch: 26 [2580/2580] Loss: 0.0051298097 Grid Acc: 0.9464341085 Offset Error: 0.0274416970
+Val Epoch: 26 [400/400] Loss: 0.0160476851 Grid Acc: 0.9030000000 Offset Error: 0.0411122082
+Train Epoch: 27 [2580/2580] Loss: 0.0048350074 Grid Acc: 0.9495348837 Offset Error: 0.0263578806
+Val Epoch: 27 [400/400] Loss: 0.0502246496 Grid Acc: 0.8385000000 Offset Error: 0.0511015338
+Train Epoch: 28 [2580/2580] Loss: 0.0049091280 Grid Acc: 0.9384496124 Offset Error: 0.0260711461
+Val Epoch: 28 [400/400] Loss: 0.0548196689 Grid Acc: 0.8400000000 Offset Error: 0.0611743183
+Train Epoch: 29 [2580/2580] Loss: 0.0052086336 Grid Acc: 0.9461240310 Offset Error: 0.0271697226
+Val Epoch: 29 [400/400] Loss: 0.1410348166 Grid Acc: 0.7070000000 Offset Error: 0.0356572109
+Train Epoch: 30 [2580/2580] Loss: 0.0067705546 Grid Acc: 0.9086046512 Offset Error: 0.0307499975
+Val Epoch: 30 [400/400] Loss: 0.0776656105 Grid Acc: 0.8165000000 Offset Error: 0.0839599250
+Train Epoch: 31 [2580/2580] Loss: 0.0051790555 Grid Acc: 0.9333333333 Offset Error: 0.0269186507
+Val Epoch: 31 [400/400] Loss: 0.0158829689 Grid Acc: 0.7970000000 Offset Error: 0.0352630880
+Train Epoch: 32 [2580/2580] Loss: 0.0050801279 Grid Acc: 0.9411627907 Offset Error: 0.0269587734
+Val Epoch: 32 [400/400] Loss: 0.0405267552 Grid Acc: 0.7980000000 Offset Error: 0.0310184502
+Train Epoch: 33 [2580/2580] Loss: 0.0046857262 Grid Acc: 0.9417054264 Offset Error: 0.0256630107
+Val Epoch: 33 [400/400] Loss: 0.0612872540 Grid Acc: 0.7585000000 Offset Error: 0.0303978027
+Train Epoch: 34 [2580/2580] Loss: 0.0045238607 Grid Acc: 0.9309302326 Offset Error: 0.0250305005
+Val Epoch: 34 [400/400] Loss: 0.0201979567 Grid Acc: 0.8750000000 Offset Error: 0.0456474944
+Train Epoch: 35 [2580/2580] Loss: 0.0047482286 Grid Acc: 0.9410077519 Offset Error: 0.0255688362
+Val Epoch: 35 [400/400] Loss: 0.0352175767 Grid Acc: 0.7790000000 Offset Error: 0.0369996880
+Train Epoch: 36 [2580/2580] Loss: 0.0045129173 Grid Acc: 0.9456589147 Offset Error: 0.0251383205
+Val Epoch: 36 [400/400] Loss: 0.0229610529 Grid Acc: 0.8520000000 Offset Error: 0.0350220228
+Train Epoch: 37 [2580/2580] Loss: 0.0045496474 Grid Acc: 0.9483720930 Offset Error: 0.0249256247
+Val Epoch: 37 [400/400] Loss: 0.0895319725 Grid Acc: 0.8410000000 Offset Error: 0.0673938414
+
+
+
+

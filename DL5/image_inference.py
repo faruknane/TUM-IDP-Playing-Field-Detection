@@ -11,7 +11,7 @@ config = {
     "model": "resnet18_customized",
     "model_path":"saved_models/model_epoch18.pth",
     "image_size": 720,
-    "image_path": r"C:\Users\FarukNane\Desktop\DL2\data\train\videos\psv_kunst\80.png",
+    "image_path": r"input.png",
     "frame_rate": 24,
 }
 
@@ -53,7 +53,7 @@ imageH = frame.shape[0]
 imageW = frame.shape[1]
 
 
-frame = np.zeros_like(frame)
+# frame = np.zeros_like(frame)
 
 for dline in dlines:
     cv2.line(frame, (int(dline[0][0]*imageW), int(dline[0][1]*imageH)), (int(dline[1][0]*imageW), int(dline[1][1]*imageH)), (0, 255, 0), 2)
